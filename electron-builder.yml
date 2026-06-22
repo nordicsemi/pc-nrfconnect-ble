@@ -1,0 +1,36 @@
+appId: com.nordicsemi.pc-nrfconnect-ble
+productName: nRF Connect Bluetooth Low Energy
+directories:
+  buildResources: resources
+files:
+  - from: dist
+    to: .
+  - from: resources
+    to: resources
+  - from: node_modules
+    to: node_modules
+  - LICENSE
+  - Changelog.md
+mac:
+  target:
+    - dmg
+  category: public.app-category.utilities
+  arch:
+    - arm64
+  icon: resources/icon.icns
+  hardenedRuntime: true
+  gatekeeperAssess: false
+  entitlements: resources/entitlements.mac.plist
+  entitlementsInherit: resources/entitlements.mac.plist
+dmg:
+  title: nRF Connect Bluetooth Low Energy
+  icon: resources/icon.icns
+  iconSize: 128
+  contents:
+    - x: 110
+      y: 150
+      type: file
+    - x: 240
+      y: 150
+      type: link
+      path: /Applications
